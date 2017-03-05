@@ -1,0 +1,108 @@
+
+body {
+
+    margin: 0;
+    padding: 0;
+}
+
+#item_highlight {
+    color: #848484;
+    font: 'Helvetica', sans-serif;
+    min-font-size: 12;
+    max-font-size: 12;
+    font-size: 110%;
+
+}
+
+#item_url {
+    min-font-size: 12;
+    max-font-size: 12;
+    font-size: 100%;
+    color: #84b15f;
+
+}
+
+#item_title {
+    font-size: 130%;
+    color: #393E46;
+}
+
+.top {
+    width: 100%;
+    height: 150px;
+    /*background: #CCCCCC;*/
+    /*background: url("./../img/header.jpg");*/
+    background: url("./../img/intro-bg.jpg");
+}
+
+.main {
+    height: auto;
+    margin: 0 auto;
+    width: 750px;
+    padding-top: 15px;
+
+    padding-bottom: 50px;
+    /*float: left;*/
+    /*margin-left: 50px;*/
+}
+
+#input-div {
+    /*margin: 0 auto;*/
+    padding-top: 70px;
+    float: left;
+    padding-left: 50px;
+    /*padding-right: 1000px;*/
+}
+
+#input-container {
+    margin: 0 auto;
+    padding-top: 50px;
+    /*float: left;*/
+    /*margin-left: 30px;*/
+}
+
+#search-input {
+    width: 250%;
+    height: 42px;
+    min-font-size: 12;
+    max-font-size: 12;
+    font-size: 100%;
+    color: #212121;
+}
+
+.right {
+    background: #ffffff;
+    float: right;
+    padding-top: 70px;
+    padding-right: 35px;
+    margin: 0 auto;
+}
+
+.jumbotron {
+    background: #ffffff;
+}
+
+.em-label {
+    color: #212121;
+    padding: 1px;
+}
+
+.em {
+    color: #212121;
+    padding: 1px;
+}
+
+#my-img-responsive {
+    height: 40px;
+    width: 120px;
+    float: left;
+    padding-left: 50px;
+    margin-top: 70px;
+}
+
+.list-group {
+    text-align: left;
+}
+
+/*.search-input {*/
+/*}*/

@@ -1,0 +1,123 @@
+// Importing bourbon to make things easy: http://bourbon.io/
+//@import "bourbon"
+//@import "bourbon/bourbon"
+@charset "utf-8"
+
+@import "bourbon/bourbon"
+//@import "neat/neat"
+
+// Useful mixins
+@mixin border-radius($radius: 4px)
+  @include prefixer(border-radius, $radius, webkit moz spec)
+
+@mixin box-sizing($box-model)
+  @include prefixer(box-sizing, $box-model, webkit moz spec)
+
+/* General styles */
+
+body
+  background-color: white
+  font-family: 'Roboto', Arial, sans-serif
+  text-align: center
+  padding-top: 30px
+  font-size: 14px
+
+h1
+  font-size: 1.5em
+  color: #666666
+
+h2, a
+  font-size: 0.8em
+  color: #9BC788
+
+h3
+  color: #999
+  margin-top: 40px
+
+/* ============================ */
+/* VARIABLES                    */
+/* ============================ */
+
+$color-primary: #9BC788
+$search-width: 400px
+$search-icon-width: 32px
+$search-height: 40px
+$visible-results: 5
+/* ============================ */
+/* SEARCH BAR                   */
+/* ============================ */
+
+.search-container
+  margin: 40px auto
+  width: $search-width
+
+.search-box
+  @include border-radius(3px)
+  background-color: #f2f2f2
+  height: $search-height
+  position: relative
+
+.search-icon
+  @include box-sizing(border-box)
+  float: left
+  width: $search-icon-width
+  height: $search-height
+  color: #999
+  font-size: 1.3em
+  padding: 7px 15px
+
+.search-input
+  @include box-sizing(border-box)
+  width: $search-width - $search-icon-width
+  height: $search-height
+  float: right
+  background-color: transparent
+  border: 0px
+  padding: 10px
+  text-transform: uppercase
+  font-family: 'Roboto', Arial, sans-serif
+  font-size: 1em
+  position: relative
+  outline: 0px
+
+//useful for animation
+@include keyframes(fadeInTop)
+  0%
+    opacity: 0
+    @include transform(translateY(-1.334em) translateZ(0))
+  100%
+    opacity: 1
+
+@mixin fadeInTop($dur: 1s, $delay: 0s, $fill: forwards)
+  @include prefixer(animation, fadeInTop $dur $delay $fill, webkit spec)
+
+.search-results
+  list-style: none
+  margin: 0
+  padding: 0
+  position: absolute
+  z-index: 999
+  width: $search-width - $search-icon-width
+  max-height: $search-height * $visible-results
+  overflow: scroll
+  top: $search-height
+  left: $search-icon-width
+  text-align: left
+  li
+    @include box-sizing(border-box)
+    padding: 10px
+    height: $search-height
+    background-color: $color-primary
+    color: white
+    font-weight: bold
+    &:hover
+      background-color: darken($color-primary, 7%)
+      cursor: pointer
+    /* ANIMATION */
+    /* remove this part if you dont like the animation */
+    @for $i from 1 through $visible-results
+      &:nth-child(#{$i})
+        /* Animation */
+        @include fadeInTop(0.4s, (($i - 1)/10) * 1s)
+        opacity: 0
+/* END OF ANIMATION */

@@ -1,0 +1,108 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{% load static %}
+<link href="{% static '/SearchModule/img/googleg_lodp.ico' %}" rel="shortcut icon">
+<meta content="origin" id="mref" name="referrer"><title>结果</title>
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'SearchModule/vendor/bootstrap/css/bootstrap.min.css' %}"/>
+<link rel="stylesheet" type="text/css"
+      href="{% static 'SearchModule/vendor/font-awesome/css/font-awesome.min.css' %}"/>
+
+
+{#{% load compile_static %}#}
+{#{% load static %}#}
+{#<link rel="stylesheet" href="{% static "SearchModule/css/search.scss"|compile %}"/>#}
+
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+{#{% load compile_static %}#}
+{#{% load static %}#}
+{#<link rel="stylesheet" href="{% static "SearchModule/css/suggestion.scss"|compile %}"/>#}
+{#<link rel="stylesheet" href="{% static "SearchModule/css/suggestion.sass"|compile %}"/>#}
+
+
+<!-- Theme CSS -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'SearchModule/css/suggestion.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'SearchModule/css/creative.min.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'SearchModule/css/search_result.css' %}"/>
+
+
+<!-- The scrollable area -->
+<body>
+
+<div class="top">
+    {#    {% load static %}#}
+    {#    <img src="{% static 'SearchModule/img/googlelogo.png' %}" id="my-img-responsive" class="img-responsive"#}
+    {#         alt="Cinque Terre">#}
+    {#    <div id="input-div" class="input-group">#}
+    {#        <input type="text" id="search-input" class="form-control">#}
+    {#    </div><!-- /input-group -->#}
+
+    <div id="input-container" class="search-container">
+        <div class="search-box">
+            <div class="search-icon">
+                <i class="fa fa-search"></i>
+            </div>
+            <input type="text" id="search" class="search-input" placeholder="搜索一下">
+            <ul class="search-results" id="results"></ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="main">
+    <div class="list-group">
+        {% for item in result %}
+            {#            #}
+            <a href="{{ item.url }}" role="{{ item.class_ }}" class="list-group-item">{% csrf_token %}
+                <h5 id="item_title"> {{ item.title }}</h5>
+                <span id="item_url"> {{ item.url }}</span>
+                <p id="item_highlight" class="text-muted">{{ item.highlight | safe }} </p>
+            </a>
+        {% endfor %}
+    </div>
+
+    <ul class="pager">
+        <li class="previous" role="{{ max_page }}"><a href="#">&larr; Previous</a></li>
+        <li class="next" role="{{ max_page }}"><a href="#">Next &rarr;</a></li>
+    </ul>
+</div>
+{##}
+{#<div class="right">#}
+{#    <div class="jumbotron">#}
+{#        <h1>Hello, world!</h1>#}
+{#        <p>...</p>#}
+{#        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>#}
+{#    </div>#}
+{##}
+{#</div>#}
+
+
+{#<div class="foot">#}
+
+{#</div>#}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+{% load static %}
+<script src="{% static '/SearchModule/vendor/jquery/jquery.min.js' %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+{% load static %}
+<script src="{% static '/SearchModule/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+{#<script src="{% static '/SearchModule/js/suggestion.js' %}"></script>#}
+<script src="{% static '/SearchModule/js/search_result.js' %}"></script>
+
+</body>
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索一下</title>
+
+    {% load compile_static %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "SearchModule/css/search.scss"|compile %}"/>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'SearchModule/css/creative.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'SearchModule/css/search.css' %}"/>
+</head>
+<body>
+
+
+<div class="title-container">
+    {#        <h1 class="title">正在输入...</h1>#}
+    {#        <h1 class="title-down">""</h1>#}
+    {#    <img src="">#}
+    {#    {% load static %}#}
+    {#    <img src="{% static 'SearchModule/img/googlelogo.png' %}" id="my-img-responsive" class="img-responsive"#}
+    {#         alt="Cinque Terre">#}
+
+</div>
+
+<fieldsstyle.csset class="field-container">{% csrf_token %}
+    <input type="text" placeholder="搜索一下..." id="my-field" class="field"/> {% csrf_token %}
+    <div class="icons-container">
+        <div class="icon-search"></div>
+        <div class="icon-close">
+            <div class="x-up"></div>
+            <div class="x-down"></div>
+        </div>
+    </div>
+</fieldsstyle.csset>
+
+
+{% load static %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+
+{% load static %}
+<script src="{% static '/SearchModule/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+{% load static %}
+<script src="{% static '/SearchModule/js/search.js' %}"></script>
+
+</body>
+</html>
